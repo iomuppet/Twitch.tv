@@ -31,6 +31,8 @@ body {
 header {
     background-color: var(--header-color);
     padding: 0 1rem;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5); /* Sombra mais forte */
+    z-index: 10; /* Garantir que o header esteja sobre outros elementos */
 }
 
 nav {
@@ -72,6 +74,19 @@ nav ul li a:focus {
     transition: margin-left 0.3s ease;
 }
 
+.user-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center; 
+}
+
+.user-menu li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .user-icon {
     width: 35px;
     border-radius: 50%;
@@ -230,3 +245,38 @@ main {
 .main-expanded {
     margin-left: 60px;
 }
+
+.search {
+    display: flex;
+    align-items: center; /* Alinha os itens no centro verticalmente */
+}
+
+nav ul input {
+    border-radius: 6px 0px 0px 6px;
+    border: 1px solid #67676B;
+    background-color: transparent;
+    color: var(--primary-text-color);
+    padding: 5px 10px;
+    height: 35px;
+    width: 400px;
+}
+
+.search button {
+    border-radius: 0px 6px 6px 0px;
+    border: 1px solid #2F2F35;
+    background-color: #2F2F35;
+    padding: 5px 10px;
+    height: 35px;
+    cursor: pointer;
+}
+
+nav ul input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+nav ul input::placeholder {
+    color: #B2B2B3;
+    font-weight: 600;
+}
+
