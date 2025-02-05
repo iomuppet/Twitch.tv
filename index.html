@@ -115,7 +115,27 @@
         </div>
     </aside>
     <main>
-        <h1> Olá este é um teste</h1>
+        <div class="carousel-container">
+            <button class="prev" onclick="prevVideo()">&#10094;</button>
+            <div class="carousel">
+                <video src="video/fks.mp4" class="carousel-video" controls autoplay muted loop></video>
+                <video src="video/gaules.mp4" class="carousel-video" controls autoplay muted loop></video>
+                <video src="video/um salve.mp4" class="carousel-video" controls autoplay muted loop></video>
+            </div>
+            <div class="video-info">
+                <div class="streamer-info">
+                    <div class="avatar-container">
+                        <img class="avatar" src="img/streamer.png" alt="Avatar do Streamer">
+                    </div>
+                    <div class="streamer-details">
+                        <h1 id="streamer-name">Streamer</h1>
+                        <p id="stream-category">Categoria</p>
+                        <p id="stream-viewers">Visualizadores: 0</p> <!-- Quantidade de espectadores -->
+                    </div>
+                </div>
+            </div>
+            <button class="next" onclick="nextVideo()">&#10095;</button>
+        </div>               
     </main>
     <script src="index.js"></script>
 </body>

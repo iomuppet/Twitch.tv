@@ -21,3 +21,40 @@ function toggleSidebar() {
         main.classList.remove('main-expanded');
     }
 }
+
+let currentIndex = 0;
+const videos = document.querySelectorAll('.carousel-video');
+const titles = ["Título da Live 1", "Título da Live 2", "Título da Live 3"];
+const categories = ["Categoria 1", "Categoria 2", "Categoria 3"];
+const streamers = ["Streamer 1", "Streamer 2", "Streamer 3"];
+
+function updateInfo() {
+    document.getElementById('stream-title').textContent = titles[currentIndex];
+    document.getElementById('stream-category').textContent = categories[currentIndex];
+    document.getElementById('streamer-name').textContent = streamers[currentIndex];
+}
+
+function showVideo(index) {
+    // Pausar todos os vídeos e ocultá-los
+    videos.forEach((video, i) => {
+        video.pause();
+        video.style.display = 'none'; // Oculta todos os vídeos
+    });
+
+    // Exibir e reproduzir o vídeo atual
+    videos[index].style.display = 'block';
+    videos[index].play(); // Iniciar o vídeo selecionado
+    updateInfo();
+}
+
+function nextVideo() {
+    currentIndex = (currentIndex + 1) % videos.length;
+    showVideo(currentIndex);
+}
+
+function prevVideo() {
+    currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+    showVideo(currentIndex);
+}
+
+showVideo(currentIndex); // Inicializa o primeiro vídeo
