@@ -31,8 +31,8 @@ body {
 header {
     background-color: var(--header-color);
     padding: 0 1rem;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5); /* Sombra mais forte */
-    z-index: 10; /* Garantir que o header esteja sobre outros elementos */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+    z-index: 10;
 }
 
 nav {
@@ -79,7 +79,7 @@ nav ul li a:focus {
     list-style: none;
     gap: 2rem;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .user-menu li {
@@ -87,6 +87,7 @@ nav ul li a:focus {
     justify-content: center;
     align-items: center;
 }
+
 .user-icon {
     width: 35px;
     border-radius: 50%;
@@ -152,10 +153,10 @@ nav ul li a:focus {
 .streamers {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start; /* Alinha os itens à esquerda */
     padding: 8px;
     border-radius: 5px;
-    transition: background 0.2s ease, transform 0.2s ease, margin-left 0.3s ease;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .streamers:hover {
@@ -169,21 +170,15 @@ nav ul li a:focus {
     border-radius: 50%;
     background-color: var(--primary-text-color);
     object-fit: cover;
-    transition: margin-left 0.3s ease;
 }
 
 .streamer-info {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    margin-left: 10px;
-    transition: margin-left 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
-}
-
-.sidebar.closed .streamer-info,
-.sidebar.closed .viewers {
-    opacity: 0;
-    transform: translateX(-10px);
+    align-items: center;
+    gap: 10px; /* Espaçamento entre a imagem e os detalhes */
+    margin-left: 0; /* Remove a margem esquerda */
+    transition: none; /* Remove transições desnecessárias */
 }
 
 .streamer-info h1 {
@@ -195,7 +190,30 @@ nav ul li a:focus {
 .streamer-info p {
     font-size: 12px;
     color: var(--secondary-text-color);
+    margin-left: 10px;
+}
+
+.streamer-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.streamer-details h1 {
+    font-size: 16px;
     margin: 0;
+    color: var(--primary-text-color);
+}
+
+.streamer-details p {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+}
+
+.streamer-info2 {
+    display: flex;
+    align-items: center;
+    transition: none; /* Remove transições desnecessárias */
 }
 
 .viewers {
@@ -248,7 +266,7 @@ main {
 
 .search {
     display: flex;
-    align-items: center; /* Alinha os itens no centro verticalmente */
+    align-items: center;
 }
 
 nav ul input {
@@ -279,6 +297,7 @@ nav ul input::placeholder {
     color: #B2B2B3;
     font-weight: 600;
 }
+
 .carousel-container {
     display: flex;
     align-items: center;
@@ -289,18 +308,19 @@ nav ul input::placeholder {
     padding: 10px;
     border-radius: 8px;
 }
+
 .carousel {
     flex: 2;
     overflow: hidden;
-    position: relative; /* Necessário para que o posicionamento absoluto dos botões funcione */
+    position: relative;
 }
+
 .carousel-video {
     width: 100%;
     height: auto;
     border-radius: 8px;
     background-color: black;
 }
-
 
 .prev, .next {
     position: absolute;
@@ -312,7 +332,7 @@ nav ul input::placeholder {
     padding: 10px;
     cursor: pointer;
     font-size: 20px;
-    z-index: 10; /* Garantir que os botões fiquem acima do vídeo */
+    z-index: 10;
 }
 
 .carousel-video {
@@ -332,13 +352,12 @@ nav ul input::placeholder {
 }
 
 .prev {
-    left: -50px; /* Mover para fora da área do vídeo, à esquerda */
+    left: -50px;
 }
 
 .next {
-    right: -50px; /* Mover para fora da área do vídeo, à direita */
+    right: -50px;
 }
-
 
 .video-info {
     flex: 1;
@@ -358,7 +377,6 @@ nav ul input::placeholder {
 .avatar-container {
     width: 50px;
     height: 50px;
-    margin-bottom: 150px;
 }
 
 .avatar {
@@ -368,7 +386,3 @@ nav ul input::placeholder {
     object-fit: cover;
     background-color: aliceblue;
 }
-
-
-
-
